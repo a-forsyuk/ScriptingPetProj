@@ -3,8 +3,8 @@
 	"configurations": [
 		{
 			"buildCommandArgs": "",
-			"buildRoot": "D:\\Repos\\ScriptingProjSln",
-			"cmakeCommandArgs": "",
+			"buildRoot": "${projectDir}\\build\\${name}",
+			"cmakeCommandArgs": "", // "-T v141_clang_c2",
 			"variables": [
 				{
 					"name": "BUILD_EDITOR",
@@ -15,71 +15,78 @@
 			"ctestCommandArgs": "",
 			"generator": "Visual Studio 15 2017",
 			"inheritEnvironments": [ "msvc_x86" ],
-			"installRoot": "D:\\Repos\\ScriptingProjInst",
-			"name": "x86-Debug"
+			"installRoot": "${projectDir}\\install\\${name}",
+			"name": "x86_debug"
 		},
-		//{
-		//	"name": "MacOS-Debug",
-		//	"generator": "Unix Makefiles",
-		//	"remoteMachineName": "192.168.1.137",
-		//	"configurationType": "Debug",
-		//	"variables": [
-		//		{
-		//			"name": "BUILD_EDITOR",
-		//			"value": "OFF"
-		//		}
-		//	],
-		//	"cmakeExecutable": "/Volumes/cmake-3.11.4-Darwin-x86_64/CMake.app/Contents/bin/cmake",
-		//	"remoteCMakeListsRoot": "~/Projects/ScriptingPetProjSrc/",
-		//	"remoteBuildRoot": "~/Projects/ScriptingPetProjBuild/",
-		//	"buildRoot": "D:\\Repos\\ScriptingProjSlnMacOS",
-		//	"remoteCopyBuildOutput": true,
-		//	"remoteInstallRoot": "~/Projects/ScriptingPetProjInstall/",
-		//	"remoteCopySources": true,
-		//	"remoteCopySourcesOutputVerbosity": "Diagnostic",
-		//	"remoteCopySourcesConcurrentCopies": "10",
-		//	"remoteCopySourcesMethod": "rsync",
-		//	"rsyncCommandArgs": "-t --delete --delete-excluded",
-		//	"installRoot": "~/Projects/ScriptingPetProjInstallMacOS/",
-		//	"cmakeCommandArgs": "",
-		//	"buildCommandArgs": "",
-		//	"ctestCommandArgs": "",
-		//	"inheritEnvironments": [ "linux-x64" ]
-		//},
-					{
-						"name": "Macos-Debug",
-						"generator": "Unix Makefiles",
-						"remoteMachineName": "192.168.1.137",
-						"configurationType": "Debug",
-						"variables": [
-							{
-								"name": "BUILD_EDITOR",
-								"value": "OFF"
-							}
-						],
-						"cmakeExecutable": "/Volumes/cmake-3.11.4-Darwin-x86_64/CMake.app/Contents/bin/cmake",
-						"remoteCMakeListsRoot": "/Users/andrewforsiuk/Projects/ScriptingPetProj/Src",
-
-						"buildRoot": "D:\\Repos\\ScriptingProjSln\\Build",
-						"installRoot": "D:\\Repos\\ScriptingProjSln\\Install",
-						"remoteBuildRoot": "/Users/andrewforsiuk/Projects/ScriptingPetProj/Build",
-						"remoteInstallRoot": "/Users/andrewforsiuk/Projects/ScriptingPetProj/Install",
-						"remoteCopySources": true,
-						"remoteCopySourcesOutputVerbosity": "Normal",
-						"remoteCopySourcesConcurrentCopies": "10",
-						"remoteCopySourcesMethod": "rsync",
-						"remoteCopySourcesExclusionList": [
-							".vs",
-							".git"
-						],
-						"rsyncCommandArgs": "-t --delete --delete-excluded",
-						"remoteCopyBuildOutput": false,
-						"cmakeCommandArgs": "",
-						"buildCommandArgs": "",
-						"ctestCommandArgs": "",
-						"inheritEnvironments": [
-							"linux_x64"
-						]
-					}
+		{
+			"name": "macos_debug",
+			"generator": "Unix Makefiles",
+			"remoteMachineName": "192.168.1.137",
+			"configurationType": "Debug",
+			"variables": [
+				{
+					"name": "BUILD_EDITOR",
+					"value": "OFF"
+				}
+			],
+			"cmakeExecutable": "/Volumes/cmake-3.11.4-Darwin-x86_64/CMake.app/Contents/bin/cmake",
+			"remoteCMakeListsRoot": "/Users/andrewforsiuk/Projects/ScriptingPetProj/",
+			"buildRoot": "${projectDir}\\build\\${name}",
+			"installRoot": "${projectDir}\\install\\${name}",
+			"remoteBuildRoot": "/Users/andrewforsiuk/Projects/ScriptingPetProj/build",
+			"remoteInstallRoot": "/Users/andrewforsiuk/Projects/ScriptingPetProj/install",
+			"remoteCopySources": true,
+			"remoteCopySourcesOutputVerbosity": "Normal",
+			"remoteCopySourcesConcurrentCopies": "10",
+			"remoteCopySourcesMethod": "rsync",
+			"remoteCopySourcesExclusionList": [
+				".vs",
+				".git"
+			],
+			"rsyncCommandArgs": "-t",
+			"remoteCopyBuildOutput": false,
+			"cmakeCommandArgs": "",
+			"buildCommandArgs": "",
+			"ctestCommandArgs": "",
+			"inheritEnvironments": [
+				"linux_x64"
+			]
+		},
+		{
+			"name": "linux_debug",
+			"generator": "Unix Makefiles",
+			"remoteMachineName": "192.168.50.50",
+			"configurationType": "Debug",
+			"variables": [
+				{
+					"name": "BUILD_EDITOR",
+					"value": "OFF"
+				}
+			],
+			"cmakeExecutable": "/home/hammerbox/perforce/cmake-3.11.4-Linux-x86_64/bin/cmake",
+			"remoteCMakeListsRoot": "/home/hammerbox/perforce/ScriptingPetProj/",
+			"buildRoot": "${projectDir}\\build\\${name}",
+			"installRoot": "${projectDir}\\install\\${name}",
+			"remoteBuildRoot": "/home/hammerbox/perforce/ScriptingPetProj/build/",
+			"remoteInstallRoot": "/home/hammerbox/perforce/ScriptingPetProj/install/",
+			"remoteCopySources": true,
+			"remoteCopySourcesOutputVerbosity": "Normal",
+			"remoteCopySourcesConcurrentCopies": "10",
+			"remoteCopySourcesMethod": "rsync",
+			"remoteCopySourcesExclusionList": [
+				".vs",
+				".git",
+				"build",
+				"install"
+			],
+			"rsyncCommandArgs": "-t",
+			"remoteCopyBuildOutput": false,
+			"cmakeCommandArgs": "",
+			"buildCommandArgs": "",
+			"ctestCommandArgs": "",
+			"inheritEnvironments": [
+				"linux_x64"
+			]
+		}
 	]
 }

@@ -1,6 +1,3 @@
-
-project(ScriptingEditor VERSION 0.1.0 LANGUAGES CSharp)
-
 include(CSharpUtilities)
 
 add_executable(ScriptingEditor
