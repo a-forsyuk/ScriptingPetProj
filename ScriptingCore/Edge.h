@@ -2,11 +2,11 @@
 
 #include "ScriptingCoreLib.h"
 
-class SCRIPTING_CORE_API MyClass
+class SCRIPTING_CORE_API Edge
 {
 public:
-	MyClass();
-	~MyClass();
+	class Edge();
+	~Edge();
 
 private:
 
