@@ -1,4 +1,3 @@
-#pragma once
 #include "TestClass.h"
 
 MyClass::MyClass()

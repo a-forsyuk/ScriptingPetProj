@@ -8,5 +8,5 @@
 #define  SCRIPTING_CORE_API __declspec(dllimport)
 #endif
 #else
-#define SCRIPTING_CORE_EXPORT
+#define SCRIPTING_CORE_API
 #endif

@@ -2,88 +2,84 @@
 	// See https://go.microsoft.com//fwlink//?linkid=834763 for more information about this file.
 	"configurations": [
 		{
-			"name": "x86-Debug",
-			"generator": "Visual Studio 15 2017",
-			"configurationType": "Debug",
-			"inheritEnvironments": [ "msvc_x86" ],
+			"buildCommandArgs": "",
 			"buildRoot": "D:\\Repos\\ScriptingProjSln",
-			"installRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\install\\${name}",
 			"cmakeCommandArgs": "",
-			"buildCommandArgs": "",
-			"ctestCommandArgs": ""
-		},
-		{
-			"name": "x86-Release",
-			"generator": "Ninja",
-			"configurationType": "RelWithDebInfo",
+			"variables": [
+				{
+					"name": "BUILD_EDITOR",
+					"value": "ON"
+				}
+			],
+			"configurationType": "Debug",
+			"ctestCommandArgs": "",
+			"generator": "Visual Studio 15 2017",
 			"inheritEnvironments": [ "msvc_x86" ],
-			"buildRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\build\\${name}",
-			"installRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\install\\${name}",
-			"cmakeCommandArgs": "",
-			"buildCommandArgs": "-v",
-			"ctestCommandArgs": ""
+			"installRoot": "D:\\Repos\\ScriptingProjInst",
+			"name": "x86-Debug"
 		},
-		{
-			"name": "x64-Debug",
-			"generator": "Ninja",
-			"configurationType": "Debug",
-			"inheritEnvironments": [ "msvc_x64_x64" ],
-			"buildRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\build\\${name}",
-			"installRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\install\\${name}",
-			"cmakeCommandArgs": "",
-			"buildCommandArgs": "-v",
-			"ctestCommandArgs": ""
-		},
-		{
-			"name": "x64-Release",
-			"generator": "Ninja",
-			"configurationType": "RelWithDebInfo",
-			"inheritEnvironments": [ "msvc_x64_x64" ],
-			"buildRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\build\\${name}",
-			"installRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\install\\${name}",
-			"cmakeCommandArgs": "",
-			"buildCommandArgs": "-v",
-			"ctestCommandArgs": ""
-		},
-		{
-			"name": "Linux-Debug",
-			"generator": "Unix Makefiles",
-			"remoteMachineName": "${defaultRemoteMachineName}",
-			"configurationType": "Debug",
-			"remoteCMakeListsRoot": "/var/tmp/src/${workspaceHash}/${name}",
-			"cmakeExecutable": "/usr/local/bin/cmake",
-			"buildRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\build\\${name}",
-			"installRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\install\\${name}",
-			"remoteBuildRoot": "/var/tmp/build/${workspaceHash}/build/${name}",
-			"remoteInstallRoot": "/var/tmp/build/${workspaceHash}/install/${name}",
-			"remoteCopySources": true,
-			"remoteCopySourcesOutputVerbosity": "Normal",
-			"remoteCopySourcesConcurrentCopies": "10",
-			"remoteCopySourcesMethod": "sftp",
-			"cmakeCommandArgs": "",
-			"buildCommandArgs": "",
-			"ctestCommandArgs": "",
-			"inheritEnvironments": [ "linux-x64" ]
-		},
-		{
-			"name": "Linux-Release",
-			"generator": "Unix Makefiles",
-			"remoteMachineName": "${defaultRemoteMachineName}",
-			"configurationType": "Release",
-			"remoteCMakeListsRoot": "/var/tmp/src/${workspaceHash}/${name}",
-			"cmakeExecutable": "/usr/local/bin/cmake",
-			"buildRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\build\\${name}",
-			"installRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\install\\${name}",
-			"remoteBuildRoot": "/var/tmp/build/${workspaceHash}/build/${name}",
-			"remoteInstallRoot": "/var/tmp/build/${workspaceHash}/install/${name}",
-			"remoteCopySources": true,
-			"remoteCopySourcesOutputVerbosity": "Normal",
-			"remoteCopySourcesConcurrentCopies": "10",
-			"remoteCopySourcesMethod": "sftp",
-			"cmakeCommandArgs": "",
-			"buildCommandArgs": "",
-			"ctestCommandArgs": "",
-			"inheritEnvironments": [ "linux-x64" ]
-		}
+		//{
+		//	"name": "MacOS-Debug",
+		//	"generator": "Unix Makefiles",
+		//	"remoteMachineName": "192.168.1.137",
+		//	"configurationType": "Debug",
+		//	"variables": [
+		//		{
+		//			"name": "BUILD_EDITOR",
+		//			"value": "OFF"
+		//		}
+		//	],
+		//	"cmakeExecutable": "/Volumes/cmake-3.11.4-Darwin-x86_64/CMake.app/Contents/bin/cmake",
+		//	"remoteCMakeListsRoot": "~/Projects/ScriptingPetProjSrc/",
+		//	"remoteBuildRoot": "~/Projects/ScriptingPetProjBuild/",
+		//	"buildRoot": "D:\\Repos\\ScriptingProjSlnMacOS",
+		//	"remoteCopyBuildOutput": true,
+		//	"remoteInstallRoot": "~/Projects/ScriptingPetProjInstall/",
+		//	"remoteCopySources": true,
+		//	"remoteCopySourcesOutputVerbosity": "Diagnostic",
+		//	"remoteCopySourcesConcurrentCopies": "10",
+		//	"remoteCopySourcesMethod": "rsync",
+		//	"rsyncCommandArgs": "-t --delete --delete-excluded",
+		//	"installRoot": "~/Projects/ScriptingPetProjInstallMacOS/",
+		//	"cmakeCommandArgs": "",
+		//	"buildCommandArgs": "",
+		//	"ctestCommandArgs": "",
+		//	"inheritEnvironments": [ "linux-x64" ]
+		//},
+					{
+						"name": "Macos-Debug",
+						"generator": "Unix Makefiles",
+						"remoteMachineName": "192.168.1.137",
+						"configurationType": "Debug",
+						"variables": [
+							{
+								"name": "BUILD_EDITOR",
+								"value": "OFF"
+							}
+						],
+						"cmakeExecutable": "/Volumes/cmake-3.11.4-Darwin-x86_64/CMake.app/Contents/bin/cmake",
+						"remoteCMakeListsRoot": "/Users/andrewforsiuk/Projects/ScriptingPetProj/Src",
+
+						"buildRoot": "D:\\Repos\\ScriptingProjSln\\Build",
+						"installRoot": "D:\\Repos\\ScriptingProjSln\\Install",
+						"remoteBuildRoot": "/Users/andrewforsiuk/Projects/ScriptingPetProj/Build",
+						"remoteInstallRoot": "/Users/andrewforsiuk/Projects/ScriptingPetProj/Install",
+						"remoteCopySources": true,
+						"remoteCopySourcesOutputVerbosity": "Normal",
+						"remoteCopySourcesConcurrentCopies": "10",
+						"remoteCopySourcesMethod": "rsync",
+						"remoteCopySourcesExclusionList": [
+							".vs",
+							".git"
+						],
+						"rsyncCommandArgs": "-t --delete --delete-excluded",
+						"remoteCopyBuildOutput": false,
+						"cmakeCommandArgs": "",
+						"buildCommandArgs": "",
+						"ctestCommandArgs": "",
+						"inheritEnvironments": [
+							"linux_x64"
+						]
+					}
 	]
 }
