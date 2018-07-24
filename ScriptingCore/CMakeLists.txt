@@ -12,4 +12,6 @@ SET(SRCS
 	ScriptingCoreLib.h
 	)
 
-add_library(ScriptingCore SHARED ${SRCS})
+add_library(ScriptingCore INTERFACE)
+
+target_include_directories(ScriptingCore INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})

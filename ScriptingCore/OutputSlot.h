@@ -1,11 +1,18 @@
 #pragma once
 
 #include "ScriptingCoreLib.h"
+#include "InputSlot.h"
+
+#include <vector>
+
+using namespace std;
 
 template<typename T>
 class SCRIPTING_CORE_API OutputSlot
 {
 public:
+	using InputSlotT = InputSlot<T>;
+
 	class OutputSlot();
 	~OutputSlot();
 
@@ -13,12 +20,13 @@ public:
 	{
 	};
 
-	T & SetInputHandler(const InputHandler& handler)
+	void ConnectTo(const InputSlotT* inputSlot)
 	{
-		inputHandler_ = handler;
+		inputSlots_.push_back(inputSlot);
 	};
 
 private:
 	
-	InputHandler inputHandler_ = nullptr;
+	using InputSlotCollection = vector<InputSlotT>;
+	InputSlotCollection inputSlots_;
 };

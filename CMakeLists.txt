@@ -9,6 +9,8 @@ ENDIF()
 
 project ("ScriptingPetProj" ${USED_LANGUAGES})
 
+set (CMAKE_CXX_STANDARD 17)
+
 add_subdirectory ("ScriptingPetProj")
 add_subdirectory ("ScriptingCore")
 
